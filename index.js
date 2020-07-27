@@ -67,14 +67,14 @@ const exchangeContract = new web3.eth.Contract(EXCHANGE_ABI, EXCHANGE_ADDRESS);
 const ETH_AMOUNT = web3.utils.toWei('0.3', 'Ether')
 console.log("Eth Amount", web3.utils.fromWei(ETH_AMOUNT))
 
-const ETH_SELL_PRICE = web3.utils.toWei('300', 'Ether') // 200 Dai a.k.a. $200 USD
+const ETH_SELL_PRICE = web3.utils.toWei('350', 'Ether') // 200 Dai a.k.a. $200 USD
 console.log("Eth SELL Price = ", web3.utils.fromWei(ETH_SELL_PRICE),'USD')
 async function sellEth(ethAmount, daiAmount) {
   // Set Deadline 1 minute from now
   const moment = require('moment') // import moment.js library
   const now = moment().unix() // fetch current unix timestamp
   const DEADLINE = now + 60 // add 60 seconds
-  console.log("Deadline", DEADLINE)
+  console.log("Deadline", new Date(DEADLINE).toTimeString())
 
   // Transaction Settings
   const SETTINGS = {
@@ -100,7 +100,7 @@ async function checkBalances() {
 
   // Check Dai balance swap
   balance = await daiContract.methods.balanceOf(process.env.ACCOUNT).call()
-  balance = web3.utils.fromWei(balance, 'Ether')
+  balance = web3.utils.fromWei(balance.toString(), 'Ether')
   console.log("Dai Balance:", balance)
 }
 
