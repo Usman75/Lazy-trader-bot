@@ -4,7 +4,8 @@ Lazy-trader-bot is a NodeJS Console based application that fetches ETH/USD price
 Auto Swap the ETH to DAI when the ETH price falls below to predefined ETH/USD price.
 
 ## VideoDemo 
- ![Demo](https://youtu.be/coTeSF2PjAU)
+https://youtu.be/coTeSF2PjAU
+
 
 ## Demo 
  ![Demo](https://github.com/Usman75/Lazy-trader-bot/blob/master/demo.gif)
